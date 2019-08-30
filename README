@@ -1,0 +1,7 @@
+NHS Jobs Plugin
+
+before use:
+'npm i && npm run build' from the plugin folder
+
+example usage:
+[nhsjobfeed url=https://www.jobs.nhs.uk/search_xml?keyword=nursing%20associate&field=title]

@@ -1,0 +1,19 @@
+{
+  "name": "oneblackbear/nhs-jobs",
+  "type": "wordpress-plugin",
+  "description": "NHS Jobs Plugin",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "mikenosko",
+      "email": "michal@oneblackbear.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "johnpbloch/wordpress": "^5.2"
+  },
+  "extra": {
+    "installer-name": "nhs-jobs"
+  }
+}

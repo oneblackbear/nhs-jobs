@@ -9,10 +9,8 @@
  */
 
 
-function _fetchVacancies()
+function _fetchVacancies($feedUrl = "https://www.jobs.nhs.uk/search_xml?keyword=nursing%20associate&field=title")
 {
-    $feedUrl = urldecode($_POST['feed']);
-
     //cache the feed in transient cache
     $hash = md5($feedUrl);
     if ( false === ( $raw_recruitment = get_transient( $hash ) ) ) {
@@ -25,7 +23,7 @@ function _fetchVacancies()
 
 function fetchVacancies()
 {
-    $vacancies = _fetchVacancies();
+    $vacancies = _fetchVacancies($_POST['feed']);
     wp_send_json($vacancies);
 }
 add_action( 'wp_ajax_fetchVacancies', 'fetchVacancies' );

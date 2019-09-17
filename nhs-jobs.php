@@ -42,15 +42,15 @@ function nhsjobfeed_shortcode( $atts, $content = null )
     $feed = urlencode($feed);
 
     return <<<EOT
-    <div id='nhs-feed' class='loading'></div>
-    <script>
-        window.FEED = {
-            url: '$url',
-            action: 'fetchVacancies',
-            nonce: '$nonce',
-            feed: '$feed',
-        };
-    </script>
-    EOT;
+<div id='nhs-feed' class='loading'></div>
+<script>
+    window.FEED = {
+        url: '$url',
+        action: 'fetchVacancies',
+        nonce: '$nonce',
+        feed: '$feed',
+    };
+</script>
+EOT;
 }
 add_shortcode( 'nhsjobfeed', 'nhsjobfeed_shortcode' );

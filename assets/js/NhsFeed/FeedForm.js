@@ -37,18 +37,22 @@ export default class FeedForm extends Component {
             <form action="#">
             {Object.entries(this.state.filters).map(([name, filter]) => (
                 <fieldset key={name}
-                    className="nhsuk-fieldset nhsuk-expander-group">
+                    className="nhsuk-fieldset nhsuk-expander-group"
+                    aria-labelledby={"details-label-" + name}>
                     <details className="nhsuk-details nhsuk-expander" open="">
-                        <summary className="nhsuk-details__summary" role="button" aria-controls={"details-content-" + name}
+                        <summary className="nhsuk-details__summary"
+                                 role="button"
+                                 aria-controls={"details-content-" + name}
                                  aria-expanded="true">
-                            <legend className="nhsuk-fieldset__legend nhsuk-details__summary-text">{filter.title}</legend>
+                            <legend className="nhsuk-fieldset__legend nhsuk-details__summary-text" id={"details-label-" + name}>{filter.title}</legend>
                         </summary>
                         <div className="nhsuk-details__text" id={"details-content-" + name} aria-hidden="false">
                             {name === 'job_employer' && (
                                 <span className="nhsuk-hint">
                                     <input type="text"
                                        className="nhsuk-input"
-                                       placeholder="Search"
+                                       placeholder="Search Employer"
+                                       aria-label="Search Employer"
                                        ref={this.job_employer_search}
                                        onChange={this.handleEmployerSearch}
                                     />
@@ -65,9 +69,11 @@ export default class FeedForm extends Component {
                                                checked={checked.checked}
                                                onChange={() => onFiltersChange(name,option, !checked.checked)}
                                                type="checkbox"
-                                               value={option} />
+                                               value={option}
+                                               aria-labelledby={name + key + "-label details-label-" + name}/>
                                         <label className="nhsuk-label nhsuk-checkboxes__label"
                                                htmlFor={name + key}
+                                               id={name + key + "-label"}
                                         >{option}</label>
                                     </div>
                                 ))}

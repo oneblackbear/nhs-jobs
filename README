@@ -5,3 +5,8 @@ before use:
 
 example usage of the shortcode url defaults to the one in example:
 [nhsjobfeed url=https://www.jobs.nhs.uk/search_xml?keyword=nursing%20associate&field=title]
+
+make sure you have this style included so it hides the employers that dont match your search
+.nhsuk-checkboxes__item.hidden {
+  display: none;
+}

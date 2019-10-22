@@ -21,12 +21,13 @@ module.exports = (env, argv) => {
                     sourceMap: useSourcemaps,
                     presets: [
                         ["@babel/preset-env", {
-                            useBuiltIns: "entry",
+                            useBuiltIns: "usage",
                             corejs: 3,
                             targets: {
                                 browsers: [
-                                    "> 0.3%"
-                                ]
+                                    "> 0.3%",
+                                    "IE 11"
+                                ],
                             },
                         }],
                         "@babel/preset-react",
